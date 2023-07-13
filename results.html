@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Data Synthesis Results</title>
+</head>
+<body>
+    <h1>Data Synthesis Results</h1>
+
+    <h2>Sample Real Data</h2>
+    <div>
+        {{ sample_data | safe }}
+    </div>
+
+    <h2>Sample Synthetic Data</h2>
+    <div>
+        {{ synthetic_data | safe }}
+    </div>
+
+    <h2>Quality Report</h2>
+    <div>
+        {{ quality_report | safe }}
+    </div>
+
+    <h2>Visualization: Column Shapes</h2>
+    <div>
+        {{ visualization | safe }}
+    </div>
+</body>
+</html>
