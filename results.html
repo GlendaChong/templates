@@ -13,6 +13,7 @@
         table {
             border-collapse: collapse;
             margin-bottom: 20px;
+            width: 100%; /* Adjust the table width as desired */
         }
         th, td {
             padding: 8px;
@@ -27,19 +28,26 @@
     </style>
 </head>
 <body>
-    <h1>Data Synthesis Results</h1>
+    <h1>Results</h1>
+
     <h2>Sample Data</h2>
-    {{ sample_data|safe }}
+    <div style="overflow-x: auto;">
+        {{ sample_data | safe }}
+    </div>
 
     <h2>Synthetic Data</h2>
-    {{ synthetic_data|safe }}
+    {{ synthetic_data | safe }}
 
     <h2>Quality Report</h2>
-    {{ quality_report|safe }}
+    <p>{{ quality_report | safe }}</p>
+
+    <h3>Quality Report Score:</h3>
+    <p>{{ quality_score }}</p>
+
+    <h3>Properties:</h3>
+    {{ properties | safe }}
 
     <h2>Visualization</h2>
-    <div class="visualization">
-        {{ visualization|safe }}
-    </div>
+    {{ visualization | safe }}
 </body>
 </html>

@@ -2,6 +2,24 @@
 <html>
 <head>
     <title>Loading</title>
+    <style>
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        h1 {
+            margin-bottom: 20px;
+        }
+    </style>
     <script>
         // Polling interval in milliseconds
         const pollingInterval = 5000;
@@ -23,7 +41,9 @@
     </script>
 </head>
 <body>
-    <h1>Loading...</h1>
-    <p>Please wait while the data is being generated.</p>
+    <div class="container">
+        <h1>Loading...</h1>
+        <p>Please wait while the data is being generated.</p>
+    </div>
 </body>
 </html>
