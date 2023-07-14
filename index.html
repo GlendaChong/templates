@@ -9,6 +9,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
+            flex-direction: column;
             height: 100vh;
         }
         .container {
@@ -22,22 +23,33 @@
             flex-direction: column;
             align-items: center;
             margin-top: 20px;
+            justify-content: center; 
         }
         .upload-form input[type="file"] {
             margin-bottom: 10px;
         }
         .upload-form input[type="submit"] {
             padding: 10px 20px;
-            background-color: #4CAF50;
+            background-color: blue; /* Change the button background color to blue */
             color: white;
             border: none;
+            border-radius: 5px; /* Add rounded edges to the button */
             cursor: pointer;
         }
     </style>
 </head>
 <body>
     <div class="container">
-        <h1>Upload File</h1>
+        <img src="https://www.mindef.gov.sg/web/wcm/connect/mindef/e012a766-20b1-42b2-b30a-1b35c7a44778/02jan20-logo.jpg?MOD=AJPERES&ContentCache=NONE&CACHE=NONE&CACHEID=ROOTWORKSPACE.Z18_1QK41482LGUP70Q0ERJ23C0000-e012a766-20b1-42b2-b30a-1b35c7a44778-mZBIG5U" alt="Logo" height="200">
+        <h1>MINDEF/SAF Single-Table Synthetic Data Generator</h1>
+        <h3>
+          Welcome to the MINDEF/SAF single-table synthetic data generator. 
+          This product can help reduce privacy and security concerns by generating synthetic data
+          from real data to be used for production testing and other applicable use cases. The engine 
+          takes in a csv file containing the real dataset, and produces the generated synthetic data
+          with an evaluation report. 
+        </h3>
+        <!-- <h1>Upload Your Dataset</h1> -->
         <form action="/upload" method="POST" enctype="multipart/form-data" class="upload-form">
             <input type="file" name="file" accept=".csv">
             <input type="submit" value="Upload">

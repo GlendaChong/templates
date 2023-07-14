@@ -22,9 +22,6 @@
         th {
             background-color: #f2f2f2;
         }
-        .visualization {
-            margin-top: 20px;
-        }
     </style>
 </head>
 <body>
@@ -39,15 +36,18 @@
     {{ synthetic_data | safe }}
 
     <h2>Quality Report</h2>
-    <!-- <p>{{ quality_report | safe }}</p> -->
-
-    <h3>Quality Report Score:</h3>
-    <p>{{ quality_score }}</p>
-
-    <h3>Properties:</h3>
+    {{ quality_score | safe }}
     {{ properties | safe }}
+
 
     <h2>Visualization</h2>
     {{ visualization | safe }}
+
+    <h3>Column Plot Example</h3>
+    {{ col_plot | safe }}
+
+    <h3>Column Pair Plot Example</h3>
+    {{ col_pair_plot | safe }}
+
 </body>
 </html>
