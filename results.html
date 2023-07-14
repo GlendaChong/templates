@@ -1,29 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Data Synthesis Results</title>
+    <title>Generated Synthetic Data Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        h1 {
+            margin-bottom: 20px;
+        }
+        table {
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        th, td {
+            padding: 8px;
+            border: 1px solid #ddd;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+        .visualization {
+            margin-top: 20px;
+        }
+    </style>
 </head>
 <body>
     <h1>Data Synthesis Results</h1>
+    <h2>Sample Data</h2>
+    {{ sample_data|safe }}
 
-    <h2>Sample Real Data</h2>
-    <div>
-        {{ sample_data | safe }}
-    </div>
-
-    <h2>Sample Synthetic Data</h2>
-    <div>
-        {{ synthetic_data | safe }}
-    </div>
+    <h2>Synthetic Data</h2>
+    {{ synthetic_data|safe }}
 
     <h2>Quality Report</h2>
-    <div>
-        {{ quality_report | safe }}
-    </div>
+    {{ quality_report|safe }}
 
-    <h2>Visualization: Column Shapes</h2>
-    <div>
-        {{ visualization | safe }}
+    <h2>Visualization</h2>
+    <div class="visualization">
+        {{ visualization|safe }}
     </div>
 </body>
 </html>
