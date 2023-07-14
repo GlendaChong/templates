@@ -1,42 +1,29 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Generating synthetic data...</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f1f1f1;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            height: 100vh;
+    <title>Loading</title>
+    <script>
+        // Polling interval in milliseconds
+        const pollingInterval = 5000;
+
+        function checkGenerationStatus() {
+            fetch('/check_generation_status')
+                .then(response => response.text())
+                .then(data => {
+                    if (data === "Data generation in progress. Please wait.") {
+                        setTimeout(checkGenerationStatus, pollingInterval);
+                    } else {
+                        window.location.replace("/results");
+                    }
+                });
         }
-        .loading-container {
-            text-align: center;
-        }
-        .loading-animation {
-            display: inline-block;
-            width: 80px;
-            height: 80px;
-            border-radius: 50%;
-            border: 6px solid #ccc;
-            border-top-color: #333;
-            animation: spin 1s ease-in-out infinite;
-        }
-        .loading-message {
-            margin-top: 20px;
-            font-size: 18px;
-        }
-        @keyframes spin {
-            0% { transform: rotate(0deg); }
-            100% { transform: rotate(360deg); }
-        }
-    </style>
+
+        // Start checking the generation status
+        checkGenerationStatus();
+    </script>
 </head>
 <body>
-    <div class="loading-container">
-        <div class="loading-animation"></div>
-        <div class="loading-message">{{ generating_message }}</div>
-    </div>
+    <h1>Loading...</h1>
+    <p>Please wait while the data is being generated.</p>
 </body>
 </html>
