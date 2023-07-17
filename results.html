@@ -18,13 +18,26 @@
         th, td {
             padding: 8px;
             border: 1px solid #ddd;
+            text-align: center; /* Center the text in the table */
         }
         th {
             background-color: #f2f2f2;
         }
+        .logo-container {
+            text-align: center;
+        }
+        .logo {
+            margin: 0 auto;
+            display: block;
+            max-height: 200px;
+        }
     </style>
 </head>
 <body>
+    <div class="logo-container">
+        <img class="logo" src="https://www.mindef.gov.sg/web/wcm/connect/mindef/e012a766-20b1-42b2-b30a-1b35c7a44778/02jan20-logo.jpg?MOD=AJPERES&ContentCache=NONE&CACHE=NONE&CACHEID=ROOTWORKSPACE.Z18_1QK41482LGUP70Q0ERJ23C0000-e012a766-20b1-42b2-b30a-1b35c7a44778-mZBIG5U" alt="Logo">
+    </div>
+
     <h1>Results</h1>
 
     <h2>Sample Data</h2>
@@ -38,7 +51,6 @@
     <h2>Quality Report</h2>
     {{ quality_score | safe }}
     {{ properties | safe }}
-
 
     <h2>Visualization</h2>
     {{ visualization | safe }}
